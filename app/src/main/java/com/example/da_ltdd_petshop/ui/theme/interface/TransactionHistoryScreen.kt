@@ -34,11 +34,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TransactionHistoryScreen ( )
+fun TransactionHistoryScreen (navController: NavController)
 {
     Scaffold(modifier = Modifier,
         topBar = {

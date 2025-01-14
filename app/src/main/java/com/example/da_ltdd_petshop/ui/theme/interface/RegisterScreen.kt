@@ -30,10 +30,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavController)
+{
     val phoneNumber = remember { mutableStateOf(TextFieldValue()) }
     val password = remember { mutableStateOf(TextFieldValue()) }
     val confirmPassword = remember { mutableStateOf(TextFieldValue()) }

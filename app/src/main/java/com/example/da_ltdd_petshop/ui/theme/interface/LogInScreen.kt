@@ -26,11 +26,14 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.da_ltdd_petshop.R
+import com.example.da_ltdd_petshop.ui.theme.navigation.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen( navController: NavController) {
     var phoneNumber by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -98,17 +101,19 @@ fun LoginScreen() {
                 Spacer(modifier = Modifier.height(8.dp))
 
                 // Quên mật khẩu
-                TextButton(onClick = { /* TODO: Thêm chức năng quên mật khẩu */ }) {
-                    Text(text = "Quên mật khẩu? Nhấn vào đây", color = Color.Gray, fontSize = 14.sp,
+
+                    Text(text = "Quên mật khẩu? Nhấn vào đây",
+                        color = Color.Gray,
+                        fontSize = 14.sp,
                         modifier = Modifier
-                            .clickable {  })
-                }
+                            .clickable {  navController.navigate("forgetpassword_screen")})
+
 
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Nút đăng nhập
                 Button(
-                    onClick = { },
+                    onClick = { navController.navigate(Screen.HomeScreen.route)},
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -134,7 +139,7 @@ fun LoginScreen() {
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Button(
-                        onClick = { /* TODO: Thêm chức năng đăng nhập Facebook */ },
+                        onClick = {navController.navigate("forgetpassword_screen") },
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1877F2))
                     ) {
                         Text("Facebook", color = Color.White)

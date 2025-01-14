@@ -34,10 +34,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @Composable
-fun ContactScreen() {
+fun ContactScreen(
+    navController: NavController
+
+)
+{
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var message by remember { mutableStateOf("") }

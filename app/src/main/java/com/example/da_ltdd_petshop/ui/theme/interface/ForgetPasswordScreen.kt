@@ -34,11 +34,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ResetPasswordScreen(onBackClick: () -> Unit, onSendCodeClick: (String) -> Unit) {
+fun ForgetPasswordScreen(navController: NavController) {
     var phoneNumber by remember { mutableStateOf("") }
 
     Scaffold (
@@ -46,7 +47,7 @@ fun ResetPasswordScreen(onBackClick: () -> Unit, onSendCodeClick: (String) -> Un
             TopAppBar(
                 title = { Text("PetShop", color = Color.White) },
                 navigationIcon = {
-                    IconButton (onClick = { onBackClick() }) {
+                    IconButton (onClick = {  }) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Back", tint = Color.White)
                     }
                 },
@@ -116,7 +117,7 @@ fun ResetPasswordScreen(onBackClick: () -> Unit, onSendCodeClick: (String) -> Un
 
                 // Nút "Lấy lại mật khẩu"
                 Button (
-                    onClick = { onSendCodeClick(phoneNumber) },
+                    onClick = { },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),

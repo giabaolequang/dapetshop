@@ -18,48 +18,32 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
-class ProductDetailActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        // Lấy dữ liệu từ Intent khi chuyển từ MainActivity
-        val productName = intent.getStringExtra("PRODUCT_NAME") ?: "Unknown"
-        val productDescription = intent.getStringExtra("PRODUCT_DESCRIPTION") ?: "No Description"
-        val productPrice = intent.getStringExtra("PRODUCT_PRICE") ?: "$0"
-        val productImage = intent.getIntExtra("PRODUCT_IMAGE", R.drawable.border)
-        val productQuantity = intent.getIntExtra("PRODUCT_QUANTITY", 0)
-        val productType = intent.getStringExtra("PRODUCT_TYPE") ?: "Unknown"
-        val productGender = intent.getStringExtra("PRODUCT_GENDER") ?: "Unknown"
-        val productIntroduction = intent.getStringExtra("PRODUCT_INTRODUCTION") ?: "No Introduction"
-        val productPros = intent.getStringExtra("PRODUCT_PROS") ?: "No Pros"
-        val productCons = intent.getStringExtra("PRODUCT_CONS") ?: "No Cons"
-        val productTemperament = intent.getStringExtra("PRODUCT_TEMPERAMENT") ?: "Unknown"
-        val productOrigin = intent.getStringExtra("PRODUCT_ORIGIN") ?: "Unknown"
 
-        // Set nội dung màn hình sử dụng Compose
-        setContent {
-            PetProductDetailScreen(
-                productName,
-                productDescription,
-                productPrice,
-                productImage,
-                productQuantity,
-                productType,
-                productGender,
-                productIntroduction,
-                productPros,
-                productCons,
-                productTemperament,
-                productOrigin
-            )
-        }
-    }
-}
+
+        /*data class PetProductDetailScreen(
+            // Lấy dữ liệu từ Intent khi chuyển từ MainActivity
+            val productName = intent.getStringExtra("PRODUCT_NAME") ?: "Unknown"
+            val productDescription = intent.getStringExtra("PRODUCT_DESCRIPTION") ?: "No Description"
+            val productPrice = intent.getStringExtra("PRODUCT_PRICE") ?: "$0"
+            val productImage = intent.getIntExtra("PRODUCT_IMAGE", R.drawable.border)
+            val productQuantity = intent.getIntExtra("PRODUCT_QUANTITY", 0)
+            val productType = intent.getStringExtra("PRODUCT_TYPE") ?: "Unknown"
+            val productGender = intent.getStringExtra("PRODUCT_GENDER") ?: "Unknown"
+            val productIntroduction = intent.getStringExtra("PRODUCT_INTRODUCTION") ?: "No Introduction"
+            val productPros = intent.getStringExtra("PRODUCT_PROS") ?: "No Pros"
+            val productCons = intent.getStringExtra("PRODUCT_CONS") ?: "No Cons"
+            val productTemperament = intent.getStringExtra("PRODUCT_TEMPERAMENT") ?: "Unknown"
+            val productOrigin = intent.getStringExtra("PRODUCT_ORIGIN") ?: "Unknown"
+        )*/
 
 @Composable
-fun PetProductDetailScreen(
+fun ProductDetailsScreen(
+    navController: NavController,
+   /*
     productName: String,
     productDescription: String,
     productPrice: String,
@@ -72,6 +56,8 @@ fun PetProductDetailScreen(
     productCons: String,
     productTemperament: String,
     productOrigin: String
+    */
+
 ) {
     // Dùng Box để đảm bảo nền full màn hình
     Box(
@@ -88,7 +74,7 @@ fun PetProductDetailScreen(
         ) {
             // Image of the Pet
             Image(
-                painter = painterResource(id = productImage),
+                painter = painterResource(id = 1),
                 contentDescription = "Hình ảnh thú cưng",
                 modifier = Modifier
                     .fillMaxWidth()
@@ -99,7 +85,7 @@ fun PetProductDetailScreen(
 
             // Product Name
             Text(
-                text = productName,
+                text = "productName",
                 style = MaterialTheme.typography.headlineMedium,
                 fontSize = 24.sp,
                 color = Color.Black,
@@ -108,7 +94,7 @@ fun PetProductDetailScreen(
 
             // Product Description
             Text(
-                text = productDescription,
+                text = "productDescription",
                 style = MaterialTheme.typography.bodyLarge,
                 color = Color.Gray,
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -116,7 +102,7 @@ fun PetProductDetailScreen(
 
             // Product Price
             Text(
-                text = "Giá: $productPrice",
+                text = "Giá: productPrice",
                 style = MaterialTheme.typography.bodyLarge,
                 fontSize = 20.sp,
                 color = Color.Green,
@@ -125,56 +111,56 @@ fun PetProductDetailScreen(
 
             // Quantity Left
             Text(
-                text = "Số lượng còn lại: $productQuantity",
+                text = "Số lượng còn lại: productQuantity",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Product Type
             Text(
-                text = "Loại: $productType",
+                text = "Loại: productType",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Gender
             Text(
-                text = "Giới tính: $productGender",
+                text = "Giới tính: productGender",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Introduction
             Text(
-                text = "Giới thiệu: $productIntroduction",
+                text = "Giới thiệu: productIntroduction",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Pros
             Text(
-                text = "Ưu điểm: $productPros",
+                text = "Ưu điểm: productPros",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Cons
             Text(
-                text = "Nhược điểm: $productCons",
+                text = "Nhược điểm: productCons",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Temperament
             Text(
-                text = "Tính cách: $productTemperament",
+                text = "Tính cách: productTemperament",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
             // Origin
             Text(
-                text = "Nơi xuất xứ: $productOrigin",
+                text = "Nơi xuất xứ: productOrigin",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
@@ -213,21 +199,3 @@ fun PetProductDetailScreen(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewProductDetail() {
-    PetProductDetailScreen(
-        productName = "Golden Retriever",
-        productDescription = "Golden Retrievers are known for their friendly and intelligent nature. They make great family pets and are highly trainable.",
-        productPrice = "$500",
-        productImage = R.drawable.border,
-        productQuantity = 10,
-        productType = "Chó",
-        productGender = "Đực",
-        productIntroduction = "Golden Retrievers are friendly and intelligent dogs, perfect for families.",
-        productPros = "Thân thiện, thông minh, dễ huấn luyện",
-        productCons = "Cần nhiều thời gian vận động",
-        productTemperament = "Hiền lành, thân thiện",
-        productOrigin = "Hoa Kỳ"
-    )
-}

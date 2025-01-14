@@ -38,11 +38,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ResetPasswordScreen() {
+fun ResetPasswordScreen(navController: NavController)
+{
     var newPassword by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
     var newPasswordVisible by remember { mutableStateOf(false) }

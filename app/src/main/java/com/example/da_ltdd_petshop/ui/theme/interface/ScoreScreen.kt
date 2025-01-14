@@ -30,11 +30,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScoreScreen(modifier: Modifier = Modifier) {
+fun ScoreScreen(navController: NavController) {
     val thang = 6
     val nd: String = if (thang < 12) {
         "$thang tháng gần nhất"

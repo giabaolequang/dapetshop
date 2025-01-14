@@ -32,12 +32,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EditPersonalInformationScreen()
+fun EditPersonalInformationScreen( navController: NavController )
 {
 
         Scaffold(modifier = Modifier,

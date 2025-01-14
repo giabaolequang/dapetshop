@@ -18,11 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTopAppBar(onBackClick: () -> Unit) {
+fun CustomTopAppBar(navController: NavController) {
     TopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFFFFC0CB)), // Nền màu hồng
         title = {
@@ -32,7 +33,7 @@ fun CustomTopAppBar(onBackClick: () -> Unit) {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 // Nút quay lại bên trái sử dụng biểu tượng mũi tên từ Material Icons
-                IconButton(onClick = onBackClick) {
+                IconButton(onClick = {}) {
                     Icon(
                         imageVector = Icons.Filled.ArrowBack, // Biểu tượng mũi tên quay lại
                         contentDescription = "Back",

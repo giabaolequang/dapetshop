@@ -34,11 +34,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomerSupportScreen() {
+fun CustomerSupportScreen(    navController: NavController)
+{
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var message by remember { mutableStateOf("") }

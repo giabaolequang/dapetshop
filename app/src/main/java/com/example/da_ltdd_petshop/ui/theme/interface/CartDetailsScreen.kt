@@ -11,10 +11,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.da_ltdd_petshop.R
 
 @Composable
-fun CartScreenParent() {
+fun CartDetailsScreen(navController: NavController)
+{
     val cartItems = remember {
         listOf(
             CartItem("Sản phẩm 1", 100000, 1),
